@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body>
+    <div class="w3-container">
+        <h2>Display all users</h2>
+
+        <table class="w3-table w3-striped w3-bordered">
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>gender</th>
+                <th>Phone</th>
+                <th>Options</th>
+            </tr>
+            <% for(let i=0 ; i < dataUser.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= dataUser[i].id %>
+                    </td>
+                    <td>
+                        <%= dataUser[i].firstName %>
+                    </td>
+                    <td>
+                        <%= dataUser[i].lastName %>
+                    </td>
+                    <td>
+                        <%= dataUser[i].email %>
+                    </td>
+                    <td>
+                        <%= dataUser[i].address %>
+                    </td>
+                    <td>
+                        <%= dataUser[i].gender %>
+                    </td>
+                    <td>
+                        <%= dataUser[i].phonenumber %>
+                    </td>
+                    <td>
+                        <a type="button" href="/edit-crud/?id=<%=dataUser[i].id%>">Edit</a>
+                        <a type="button" href="/delete-crud/?id=<%=dataUser[i].id%>">Delete</a>
+                    </td>
+                </tr>
+                <% } %>
+        </table>
+    </div>
+
+</body>
+
+</html>
