@@ -352,7 +352,7 @@ let getListPatientByDayService = (id, date) => {
                     where: { doctorId: id, date: date, statusId: 'S2' },    //find all patient booked and confirmed
                     include: [
                         {
-                            model: db.User, as: 'patientData', attributes: ['firstName', 'lastName', 'address', 'gender', 'phoneNumber', 'email'],
+                            model: db.User, as: 'patientData', attributes: ['firstName', 'lastName', 'address', 'gender', 'phonenumber', 'email'],
                             include: [
                                 {
                                     model: db.Allcode, as: 'genderData', attributes: ['valueEn', 'valueVi']
